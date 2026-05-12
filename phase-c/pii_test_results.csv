@@ -1,0 +1,14 @@
+﻿input,output,pii_found,detected,latency_ms
+"Số CCCD của tôi là 012345678901, mã số thuế là 0106769437.",[PERSON_REDACTED] t[US_DRIVER_LICENSE_REDACTED][US_DRIVER_LICENSE_REDACTED]ED]RED[US_BANK_NUMBER_REDACTED]ON_REDACTED]ã ,CCCD; MST; PERSON; US_BANK_NUMBER; US_DRIVER_LICENSE,True,256.38
+"Liên hệ Trịnh Thị Sang, SĐT 0987654321, email sangtrinh@gmail.com.","Liên hệ Trịnh Thị Sang, SĐT [US_DRIVER_LICENSE_REDACTED]UMBER_REDACTED]BER_REDACTED]TED], em[EMAIL_ADD[URL_REDACTED]CTED",MST; EMAIL; EMAIL_ADDRESS; URL; PHONE_NUMBER; US_BANK_NUMBER; US_DRIVER_LICENSE,True,880.88
+"Người nộp thuế: Nguyễn Văn A, MST 0312456789, CCCD 038099001234.",[PERSON_REDACTED[PERSON_REDACTED]:[US_DRIVER_LICENS[US_DRIVER_LICENSE_REDACTED]MBER_R[US_BANK_NUMBER_REDACTED] MST [MST_,CCCD; MST; PERSON; US_BANK_NUMBER; US_DRIVER_LICENSE,True,6.15
+Hỏi về điều 17 Nghị định 13 — không có PII ở đây.,Hỏi về điều 17 [PERSON_REDACTED] định 13 — không có PII ở đây.,PERSON,True,7.81
+"Số điện thoại: +84912345678, địa chỉ email: admin@company.vn.",Số điện thoại: [[US_DRIVER_LICENSE_REDACTED]MBER_REDACTED]R_REDACTED]TE[PERSON_REDACTED]ma[E[URL_REDACTED]SS_REDACTED]TE,PHONE; EMAIL; EMAIL_ADDRESS; PERSON; URL; PHONE_NUMBER; US_BANK_NUMBER; US_DRIVER_LICENSE,True,5.91
+Tôi muốn hiểu quy trình xử lý dữ liệu cá nhân theo NĐ 13 là như thế nào?,Tôi muốn hiểu [PERSON_REDACTED] d[PERSON_REDACTED]eo NĐ 13 là như thế nào?,PERSON,True,6.32
+CCCD: 001098765432 và mã số thuế công ty: 0100109106.,CCCD: [US_DRIVER_LICENSE_REDACTED]BER_REDA[US_DRIVER_LICENSE_REDACTED]à [PER[US_BANK_NUMBER_REDACTED]ED][DATE_TIME_REDAC,CCCD; MST; PERSON; DATE_TIME; US_BANK_NUMBER; US_DRIVER_LICENSE,True,4.78
+Nội dung hợp đồng không có thông tin nhạy cảm cần xem xét.,[PERSON_REDACTED] nhạy cảm cần xem xét.,PERSON,True,4.57
+Gửi thông tin đến 0901234567 hoặc support@taxdept.gov.vn.,[PERSON_REDACTED] [US_DRIVER_LICENSE_REDACTED]UMBER_REDACTED]K_NHS_REDACTED[URL_REDACTED]_REDACTED]CTED].,MST; EMAIL; UK_NHS; EMAIL_ADDRESS; PERSON; URL; US_BANK_NUMBER; US_DRIVER_LICENSE,True,3.94
+Các quyền của chủ thể dữ liệu theo Điều 9 Nghị định 13 là gì?,[PERSON_REDACT[PERSON_RED[PERSON_REDACTED]của chủ thể dữ liệu theo Điều 9 Nghị định 13 là gì?,PERSON,True,4.97
+,,none,False,0.17
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,none,False,39.12
+Hello World — purely English text without any Vietnamese PII,Hello World — purely English text without any [NRP_REDACTED] PII,NRP,True,4.32

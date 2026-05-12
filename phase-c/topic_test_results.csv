@@ -1,0 +1,21 @@
+﻿query,expected,predicted,correct,reason,latency_ms
+Nghị định 13 quy định gì về quyền của chủ thể dữ liệu?,on,on,True,"Câu hỏi trực tiếp nhắc đến 'Nghị định 13', một trong các chủ đề được phép.",8715.07
+Làm thế nào để khai thuế GTGT theo mẫu 01/GTGT?,on,on,True,Câu hỏi liên quan trực tiếp đến 'thuế GTGT' và 'tờ khai thuế'.,3994.81
+Dữ liệu cá nhân nhạy cảm là gì theo pháp luật Việt Nam?,on,on,True,"Câu hỏi liên quan trực tiếp đến chủ đề ""bảo vệ dữ liệu cá nhân"" và ""pháp luật Việt Nam"".",2760.9
+Thời hạn lưu trữ dữ liệu cá nhân theo Nghị định 13 là bao lâu?,on,on,True,"Câu hỏi liên quan trực tiếp đến 'bảo vệ dữ liệu cá nhân' và 'Nghị định 13', là các chủ đề được phép.",3888.47
+Điều kiện để chuyển dữ liệu cá nhân ra nước ngoài là gì?,on,on,True,Câu hỏi liên quan trực tiếp đến chủ đề 'bảo vệ dữ liệu cá nhân'.,2788.82
+Mức thuế suất GTGT 5% áp dụng cho những hàng hóa nào?,on,on,True,Câu hỏi liên quan trực tiếp đến 'thuế suất GTGT' thuộc chủ đề 'thuế GTGT'.,2806.83
+Trình tự xử lý vi phạm về bảo vệ dữ liệu cá nhân ra sao?,on,on,True,Câu hỏi trực tiếp liên quan đến chủ đề 'bảo vệ dữ liệu cá nhân'.,2699.81
+Biểu mẫu tờ khai thuế GTGT có những phần gì?,on,on,True,Câu hỏi liên quan trực tiếp đến 'thuế GTGT' và 'tờ khai thuế'.,3993.25
+Cơ quan nào có thẩm quyền kiểm tra tuân thủ Nghị định 13?,on,on,True,"Câu hỏi trực tiếp đề cập đến 'Nghị định 13', một trong các chủ đề được phép.",2756.25
+Doanh nghiệp cần thực hiện đánh giá tác động gì theo NĐ 13?,on,on,True,"Câu hỏi trực tiếp đề cập đến 'NĐ 13', một trong các chủ đề được phép và liên quan đến bảo vệ dữ liệu",3154.26
+Hướng dẫn cách làm bánh mì phô mai kiểu Pháp.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",3305.34
+Đội tuyển bóng đá Việt Nam thi đấu như thế nào mùa này?,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",5472.9
+Thời tiết hôm nay ở Hà Nội như thế nào?,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",2508.64
+Cách học lập trình Python từ đầu.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",2972.77
+Bộ phim Marvel nào hay nhất 2025?,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",3030.7
+Công thức nấu phở bò truyền thống.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",3013.7
+Tư vấn mua xe ô tô điện loại nào tốt nhất.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",2875.58
+Cách chơi cờ vua cho người mới bắt đầu.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",3716.52
+Xu hướng thời trang hè 2026.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",4931.98
+Lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,off,off,True,"Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Ngh",2707.66

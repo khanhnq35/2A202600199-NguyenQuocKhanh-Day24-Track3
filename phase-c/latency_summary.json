@@ -1,0 +1,12 @@
+{
+  "n_requests": 100,
+  "note": "L1 PII guard benchmark (100 req). L2/L3 excluded from guard-only run \u2014 add --use-rag flag for full stack.",
+  "l1": {
+    "p50": 3.25,
+    "p95": 4.44,
+    "p99": 6.66
+  },
+  "l3": {
+    "note": "Groq API, measured separately in output_guard_summary.json"
+  }
+}

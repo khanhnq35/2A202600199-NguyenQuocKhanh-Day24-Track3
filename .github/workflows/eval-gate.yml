@@ -1,0 +1,53 @@
+name: RAG Evaluation Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'   # Daily at 2am UTC
+
+jobs:
+  ragas-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    env:
+      GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      GCP_LOCATION: ${{ secrets.GCP_LOCATION }}
+      LLM_PROVIDER: google
+      JUDGE_LLM: gemini-2.5-pro
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Authenticate GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Run evaluation gate
+        run: python scripts/run_eval.py
+
+      - name: Upload evaluation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results-${{ github.run_id }}
+          path: |
+            phase-a/ragas_results.csv
+            phase-a/ragas_summary.json
+            phase-a/failure_analysis.md
+          retention-days: 30
