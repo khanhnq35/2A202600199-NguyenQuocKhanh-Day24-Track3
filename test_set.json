@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Tên người nộp thuế và mã số thuế trong tờ khai thuế GTGT Mẫu số 01/GTGT là gì?",
+    "ground_truth": "Tên người nộp thuế là CÔNG TY CỔ PHẦN DHA SURFACES và mã số thuế là 0106769437."
+  },
+  {
+    "question": "Thuế giá trị gia tăng phải nộp của hoạt động sản xuất kinh doanh trong kỳ 4 năm 2024 là bao nhiêu?",
+    "ground_truth": "Thuế giá trị gia tăng phải nộp của hoạt động sản xuất kinh doanh trong kỳ là 52.133.830 đồng."
+  },
+  {
+    "question": "Nghị định 13/2023/NĐ-CP áp dụng đối với những đối tượng nào?",
+    "ground_truth": "Nghị định áp dụng đối với: Cơ quan, tổ chức, cá nhân Việt Nam; Cơ quan, tổ chức, cá nhân nước ngoài tại Việt Nam; Cơ quan, tổ chức, cá nhân Việt Nam hoạt động tại nước ngoài; Cơ quan, tổ chức, cá nhân nước ngoài trực tiếp tham gia hoặc có liên quan đến hoạt động xử lý dữ liệu cá nhân tại Việt Nam."
+  },
+  {
+    "question": "Theo Nghị định bảo vệ dữ liệu cá nhân, dữ liệu cá nhân cơ bản bao gồm những gì liên quan đến giấy tờ tùy thân?",
+    "ground_truth": "Dữ liệu cá nhân cơ bản liên quan đến giấy tờ tùy thân bao gồm số chứng minh nhân dân, số định danh cá nhân, số hộ chiếu, số giấy phép lái xe, số mã số thuế cá nhân, số bảo hiểm xã hội, số thẻ bảo hiểm y tế."
+  },
+  {
+    "question": "Kỳ tính thuế của Tờ khai thuế giá trị gia tăng Mẫu số 01/GTGT của công ty DHA Surfaces là khi nào?",
+    "ground_truth": "Quý 4 năm 2024."
+  },
+  {
+    "question": "Hàng hóa, dịch vụ mua vào chịu thuế suất 10% có giá trị chưa thuế là bao nhiêu?",
+    "ground_truth": "Giá trị hàng hóa, dịch vụ mua vào chịu thuế suất 10% (chưa có thuế GTGT) là 2.405.743.241 đồng."
+  },
+  {
+    "question": "Tổng doanh thu và thuế giá trị gia tăng của hàng hóa, dịch vụ bán ra trong kỳ tính thuế là bao nhiêu?",
+    "ground_truth": "Tổng giá trị hàng hóa, dịch vụ bán ra (chưa thuế) là 3.703.688.610 đồng và tổng thuế giá trị gia tăng của hàng hóa, dịch vụ bán ra là 345.675.440 đồng."
+  },
+  {
+    "question": "Số tiền Thuế giá trị gia tăng còn được khấu trừ kỳ trước chuyển sang là bao nhiêu?",
+    "ground_truth": "Thuế giá trị gia tăng còn được khấu trừ kỳ trước chuyển sang là 77.377.803 đồng."
+  },
+  {
+    "question": "Thuế giá trị gia tăng phát sinh trong kỳ của công ty DHA Surfaces được tính ra bao nhiêu và dựa trên công thức nào?",
+    "ground_truth": "Thuế GTGT phát sinh trong kỳ là 129.511.633 đồng, được tính dựa trên công thức: Chỉ tiêu [35] trừ đi chỉ tiêu [25] ([36]=[35]-[25])."
+  },
+  {
+    "question": "Ai là người đại diện ký tờ khai thuế giá trị gia tăng này và ngày ký là ngày nào?",
+    "ground_truth": "Người ký là TRỊNH THỊ SANG, ký ngày 24 tháng 01 năm 2025."
+  },
+  {
+    "question": "Nghị định bảo vệ dữ liệu cá nhân số 13/2023/NĐ-CP được ban hành vào ngày tháng năm nào?",
+    "ground_truth": "Ngày 17 tháng 4 năm 2023."
+  },
+  {
+    "question": "Dữ liệu cá nhân được phân làm mấy loại chính theo quy định tại Nghị định 13?",
+    "ground_truth": "Dữ liệu cá nhân bao gồm 2 loại chính: dữ liệu cá nhân cơ bản và dữ liệu cá nhân nhạy cảm."
+  },
+  {
+    "question": "Thông tin về nhóm máu có được coi là dữ liệu cá nhân nhạy cảm theo Nghị định 13 không?",
+    "ground_truth": "Không, tình trạng sức khỏe được ghi trong hồ sơ bệnh án là dữ liệu nhạy cảm, nhưng không bao gồm thông tin về nhóm máu."
+  },
+  {
+    "question": "Bên Xử lý dữ liệu cá nhân được định nghĩa như thế nào trong Nghị định 13?",
+    "ground_truth": "Bên Xử lý dữ liệu cá nhân là tổ chức, cá nhân thực hiện việc xử lý dữ liệu thay mặt cho Bên Kiểm soát dữ liệu, thông qua một hợp đồng hoặc thỏa thuận với Bên Kiểm soát dữ liệu."
+  },
+  {
+    "question": "Thế nào là Xử lý dữ liệu cá nhân tự động?",
+    "ground_truth": "Là hình thức xử lý dữ liệu cá nhân được thực hiện bằng phương tiện điện tử nhằm đánh giá, phân tích, dự đoán hoạt động của một người cụ thể, như: thói quen, sở thích, mức độ tin cậy, hành vi, địa điểm, xu hướng, năng lực."
+  },
+  {
+    "question": "Theo Nghị định 13, khi nào thì hoạt động xử lý dữ liệu được coi là chuyển dữ liệu cá nhân ra nước ngoài?",
+    "ground_truth": "Khi tổ chức, cá nhân chuyển dữ liệu của công dân Việt Nam cho tổ chức, bộ phận quản lý ở nước ngoài, hoặc xử lý dữ liệu của công dân Việt Nam bằng các hệ thống tự động nằm ngoài lãnh thổ Việt Nam."
+  },
+  {
+    "question": "Hãy liệt kê các hành vi bị nghiêm cấm trong hoạt động bảo vệ dữ liệu cá nhân theo Điều 8.",
+    "ground_truth": "1. Xử lý trái pháp luật. 2. Tạo thông tin chống phá Nhà nước. 3. Gây ảnh hưởng an ninh quốc gia, trật tự an toàn xã hội, quyền lợi tổ chức, cá nhân. 4. Cản trở cơ quan có thẩm quyền. 5. Lợi dụng bảo vệ dữ liệu để vi phạm pháp luật."
+  },
+  {
+    "question": "Nội dung quản lý nhà nước về bảo vệ dữ liệu cá nhân do cơ quan nào thống nhất quản lý và bao gồm những việc chính nào?",
+    "ground_truth": "Chính phủ thống nhất quản lý. Nội dung bao gồm: ban hành văn bản quy phạm pháp luật, xây dựng chiến lược, hướng dẫn, tuyên truyền giáo dục, đào tạo cán bộ, thanh tra kiểm tra, thống kê báo cáo và hợp tác quốc tế."
+  },
+  {
+    "question": "Thông tin khách hàng của các tổ chức tín dụng có thuộc nhóm dữ liệu cá nhân nhạy cảm không? Bao gồm những thông tin gì?",
+    "ground_truth": "Có thuộc nhóm dữ liệu nhạy cảm. Bao gồm: thông tin định danh khách hàng, thông tin tài khoản, tiền gửi, tài sản gửi, giao dịch và thông tin bên bảo đảm."
+  },
+  {
+    "question": "Việc mua bán dữ liệu cá nhân có được pháp luật cho phép không?",
+    "ground_truth": "Dữ liệu cá nhân không được mua, bán dưới mọi hình thức, trừ trường hợp luật có quy định khác."
+  }
+]

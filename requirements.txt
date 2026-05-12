@@ -1,0 +1,11 @@
+openai
+google-cloud-aiplatform
+python-dotenv
+sentence-transformers
+qdrant-client
+rank-bm25
+underthesea
+ragas
+pytest
+einops
+torch

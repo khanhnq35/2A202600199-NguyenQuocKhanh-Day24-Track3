@@ -1,0 +1,13 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+qdrant_data/
+*.egg-info/
+reports/*.json
+khanhnq/
+.venv/
+scratch/
+logs/
+qdrant_db/
