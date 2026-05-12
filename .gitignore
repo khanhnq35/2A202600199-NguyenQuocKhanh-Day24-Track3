@@ -11,3 +11,9 @@ khanhnq/
 scratch/
 logs/
 qdrant_db/
+.cache/
+*.csv
+*.json
+!requirements.txt
+!test_set.json
+!phase-a/testset_v1.csv
