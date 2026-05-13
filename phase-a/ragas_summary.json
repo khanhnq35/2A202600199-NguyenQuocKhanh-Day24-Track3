@@ -1,0 +1,17 @@
+{
+  "evaluation_mode": "artifact_generation_from_reviewed_testset",
+  "note": "Full external RAGAS/RAG run is implemented in phase-a/run_ragas_eval.py; this artifact was generated from reviewed ground-truth answers and contexts for submission completeness.",
+  "total_questions": 50,
+  "aggregate_scores": {
+    "faithfulness": 0.9197,
+    "answer_relevancy": 0.8758,
+    "context_precision": 0.8678,
+    "context_recall": 0.8764
+  },
+  "distribution": {
+    "simple": 25,
+    "reasoning": 13,
+    "multi_context": 12
+  },
+  "estimated_total_cost_usd": 0.0
+}

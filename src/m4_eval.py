@@ -84,11 +84,19 @@ def evaluate_ragas(questions: list[str], answers: list[str],
     
     metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
     
+    # Tối ưu hóa việc chạy: giảm số luồng song song và tăng timeout để tránh lỗi Vertex AI
+    from ragas.run_config import RunConfig
+    run_config = RunConfig(
+        max_workers=2, 
+        timeout=120
+    )
+    
     results = evaluate(
         dataset=dataset,
         metrics=metrics,
         llm=ragas_llm,
-        embeddings=ragas_emb
+        embeddings=ragas_emb,
+        run_config=run_config
     )
     
     # Ragas results might need conversion

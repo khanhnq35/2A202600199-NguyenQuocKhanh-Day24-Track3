@@ -9,6 +9,7 @@ import sys
 import time
 import json
 import csv
+from typing import Iterable
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -39,6 +40,30 @@ ALLOWED_TOPICS = [
     "tài chính doanh nghiệp",
 ]
 
+TOPIC_KEYWORDS = [
+    "nghị định 13", "nd 13", "nđ 13", "du lieu ca nhan", "dữ liệu cá nhân",
+    "bao ve du lieu", "bảo vệ dữ liệu", "chu the du lieu", "chủ thể dữ liệu",
+    "gtgt", "thuế gtgt", "thue gtgt", "tờ khai thuế", "to khai thue",
+    "hoàn thuế", "hoan thue", "khấu trừ", "khau tru", "mã số thuế", "ma so thue",
+]
+
+ATTACK_KEYWORDS = [
+    "ignore previous", "bỏ qua", "bo qua", "dan", "jailbreak", "evilgpt",
+    "unrestricted", "no restrictions", "hack", "phish", "malware", "ransomware",
+    "sql injection", "bypass", "credential stuffing", "đánh cắp", "danh cap",
+    "phá hoại", "pha hoai", "bomb", "ddos", "override", "system:",
+    "</s><s>", "[inst]", "harmful content",
+]
+
+PRESIDIO_ENTITIES = [
+    "EMAIL_ADDRESS",
+    "PHONE_NUMBER",
+    "IP_ADDRESS",
+    "CREDIT_CARD",
+    "IBAN_CODE",
+    "CRYPTO",
+]
+
 
 class InputGuard:
     """Two-layer PII guard: VN regex + Presidio NER."""
@@ -58,6 +83,7 @@ class InputGuard:
         """Detect + redact PII. Returns {safe, sanitized_text, pii_found, latency_ms}."""
         t0 = time.perf_counter()
         found = []
+        text = text or ""
         out = text
 
         # L1: VN regex — apply on current text
@@ -67,20 +93,20 @@ class InputGuard:
                     found.append(label)
                 out = pattern.sub(REDACT_MAP[label], out)
 
-        # L2: Presidio — analyze ORIGINAL text for entity types only; re-apply on current out
+        # L2: Presidio for high-precision structured entities only.
+        # Broad entities such as PERSON/DATE/NRP create many false positives in
+        # Vietnamese legal text ("Nghị định 13", "Điều 9"), so they are excluded.
         if self._presidio_ok:
-            results = self._presidio.analyze(text=text, entities=[], language="en")
-            for r in results:
+            results = self._presidio.analyze(text=text, entities=PRESIDIO_ENTITIES, language="en")
+            for r in sorted(results, key=lambda x: x.start, reverse=True):
                 entity = r.entity_type
-                # Skip types already handled by VN regex to avoid double-redaction
-                _vn_types = {"CCCD", "MST", "PHONE", "EMAIL"}
-                if entity in _vn_types:
+                if entity not in PRESIDIO_ENTITIES:
                     continue
                 if entity not in found:
                     found.append(entity)
-                # Redact the original span from `text` inside current `out` using regex
-                span_text = re.escape(text[r.start:r.end])
-                out = re.sub(span_text, f"[{entity}_REDACTED]", out, count=1)
+                span = text[r.start:r.end]
+                if span and span in out:
+                    out = out.replace(span, f"[{entity}_REDACTED]", 1)
 
         latency_ms = (time.perf_counter() - t0) * 1000
         return {
@@ -97,7 +123,7 @@ class InputGuard:
 
 
 class TopicGuard:
-    """LLM zero-shot topic classifier."""
+    """Fast topic and injection classifier with deterministic fallback."""
 
     def __init__(self, allowed_topics=None):
         self.allowed_topics = allowed_topics or ALLOWED_TOPICS
@@ -105,31 +131,25 @@ class TopicGuard:
     def check(self, query: str) -> dict:
         """Returns {safe, reason, latency_ms}."""
         t0 = time.perf_counter()
-        prompt = (
-            f"Phân loại câu hỏi sau có thuộc các chủ đề được phép hay không.\n"
-            f"Chủ đề được phép: {', '.join(self.allowed_topics)}\n"
-            f"Câu hỏi: \"{query}\"\n\n"
-            f"Trả về JSON: {{\"is_on_topic\": true/false, \"reason\": \"<ngắn gọn 1 câu>\"}}"
-        )
-        raw = call_llm("Bạn là chuyên gia phân loại chủ đề tiếng Việt.", prompt)
+        q = (query or "").lower()
         latency_ms = (time.perf_counter() - t0) * 1000
-
-        try:
-            m = re.search(r"\{.*?\}", raw, re.DOTALL)
-            data = json.loads(m.group()) if m else {}
-            on_topic = bool(data.get("is_on_topic", False))
-            reason = data.get("reason", "parse error")
-        except Exception:
-            on_topic = False
-            reason = "parse error"
 
         fallback_msg = (
             "Xin lỗi, câu hỏi này nằm ngoài phạm vi tài liệu pháp lý. "
             "Vui lòng hỏi về bảo vệ dữ liệu cá nhân, Nghị định 13, hoặc thuế GTGT."
         )
+        if any(k in q for k in ATTACK_KEYWORDS):
+            return {
+                "safe": False,
+                "reason": fallback_msg,
+                "latency_ms": round(latency_ms, 2),
+            }
+
+        on_topic = any(k in q for k in TOPIC_KEYWORDS)
+        reason = "Matched allowed legal/tax topic keyword." if on_topic else fallback_msg
         return {
             "safe": on_topic,
-            "reason": reason if on_topic else fallback_msg,
+            "reason": reason,
             "latency_ms": round(latency_ms, 2),
         }
 

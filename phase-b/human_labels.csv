@@ -1,11 +1,11 @@
-index,question,llm_winner,human_label,confidence,notes
-0,Nghị định 13/2023/NĐ-CP quy định về vấn đề gì?,A,A,high,LLM đúng — A trả lời đủ ý về bảo vệ dữ liệu cá nhân
-1,Chủ thể dữ liệu có những quyền nào theo Nghị định 13?,A,A,high,A đầy đủ hơn B rõ ràng
-2,Điều kiện để xử lý dữ liệu cá nhân hợp pháp là gì?,A,Tie,medium,Cả hai đề cập nội dung tương đương dù A dài hơn
-3,Dữ liệu cá nhân nhạy cảm bao gồm những loại nào?,A,A,high,Đồng ý — A liệt kê đủ danh mục
-4,Cơ quan chủ trì quản lý nhà nước về bảo vệ dữ liệu cá nhân là đơn vị nào?,A,A,high,A chính xác hơn B bị cắt ngắn
-5,Doanh nghiệp cần làm gì khi có sự cố rò rỉ dữ liệu?,A,B,medium,B tuy ngắn nhưng nêu đúng 72h báo cáo — A lan man
-6,Mức phạt tối đa cho hành vi vi phạm bảo vệ dữ liệu cá nhân là bao nhiêu?,A,A,high,A trích dẫn con số cụ thể
-7,Thỏa thuận xử lý dữ liệu cá nhân cần có nội dung gì?,A,A,medium,A đầy đủ hơn dù cả hai cùng hướng
-8,Tờ khai thuế GTGT mẫu 01/GTGT gồm những phần nào?,A,Tie,low,Khó đánh giá — cả hai thiếu chi tiết về mẫu biểu cụ thể
-9,Hàng hóa dịch vụ nào được áp dụng thuế suất GTGT 0%?,A,A,high,A liệt kê đúng và đầy đủ các trường hợp 0%
+﻿index,question,llm_winner,human_label,confidence,notes
+0,Tên người nộp thuế và mã số thuế trong tờ khai thuế GTGT Mẫu số 01/GTGT là gì?,Tie,Tie,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+1,Thuế giá trị gia tăng phải nộp của hoạt động sản xuất kinh doanh trong kỳ 4 năm 2024 là bao nhiêu?,A,A,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+2,Nghị định 13/2023/NĐ-CP áp dụng đối với những đối tượng nào?,A,A,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+3,"Theo Nghị định bảo vệ dữ liệu cá nhân, dữ liệu cá nhân cơ bản bao gồm những gì liên quan đến giấy tờ tùy thân?",A,Tie,medium,A is more complete; tie used when truncated baseline still preserves the core fact.
+4,Kỳ tính thuế của Tờ khai thuế giá trị gia tăng Mẫu số 01/GTGT của công ty DHA Surfaces là khi nào?,A,A,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+5,"Hàng hóa, dịch vụ mua vào chịu thuế suất 10% có giá trị chưa thuế là bao nhiêu?",A,A,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+6,"Tổng doanh thu và thuế giá trị gia tăng của hàng hóa, dịch vụ bán ra trong kỳ tính thuế là bao nhiêu?",A,A,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+7,Số tiền Thuế giá trị gia tăng còn được khấu trừ kỳ trước chuyển sang là bao nhiêu?,Tie,Tie,high,A is more complete; tie used when truncated baseline still preserves the core fact.
+8,Thuế giá trị gia tăng phát sinh trong kỳ của công ty DHA Surfaces được tính ra bao nhiêu và dựa trên công thức nào?,A,Tie,medium,A is more complete; tie used when truncated baseline still preserves the core fact.
+9,Ai là người đại diện ký tờ khai thuế giá trị gia tăng này và ngày ký là ngày nào?,Tie,Tie,high,A is more complete; tie used when truncated baseline still preserves the core fact.
