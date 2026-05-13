@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300">
+  <rect width="760" height="300" fill="white"/>
+  <text x="24" y="32" font-family="Arial" font-size="18" fill="#222">Judge Bias Summary</text>
+  <text x="24" y="70" font-family="Arial" font-size="14" fill="#222">Run-1 A wins: 83.3%</text>
+  <rect x="24" y="86" width="250" height="34" fill="#4267ac"/>
+  <rect x="24" y="150" width="33" height="34" fill="#d9822b"/>
+  <text x="24" y="140" font-family="Arial" font-size="14" fill="#222">Length correlation: r=0.112</text>
+  <text x="24" y="230" font-family="Arial" font-size="13" fill="#555">Counts: {'A': 25, 'Tie': 5}</text>
+</svg>

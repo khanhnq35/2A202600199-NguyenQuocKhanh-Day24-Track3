@@ -14,6 +14,12 @@ import re
 from collections import Counter
 from pathlib import Path
 
+os.environ.setdefault("MPLCONFIGDIR", str(Path(__file__).resolve().parents[1] / ".cache" / "matplotlib"))
+os.environ.setdefault("XDG_CACHE_HOME", str(Path(__file__).resolve().parents[1] / ".cache"))
+
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -282,7 +288,7 @@ def write_bias_report(df: pd.DataFrame) -> None:
     axes[1].set_xlabel("len(A) - len(B)")
     axes[1].set_ylabel("A=1, Tie=0, B=-1")
     plt.tight_layout()
-    plt.savefig(PHASE_B / "bias_analysis.png", dpi=150, bbox_inches="tight")
+    plt.savefig(PHASE_B / "bias_analysis.svg", bbox_inches="tight")
     plt.close()
 
     report = f"""# Judge Bias Observations Report
@@ -301,7 +307,7 @@ def write_bias_report(df: pd.DataFrame) -> None:
 
 ## Chart
 
-![Bias Analysis](bias_analysis.png)
+![Bias Analysis](bias_analysis.svg)
 
 ## Summary
 

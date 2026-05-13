@@ -9,9 +9,9 @@ import sys
 import time
 import json
 import csv
-from typing import Iterable
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+os.environ.setdefault("TLDEXTRACT_CACHE", os.path.join(os.getcwd(), ".cache", "tldextract"))
 
 from src.utils import call_llm
 
@@ -69,6 +69,9 @@ class InputGuard:
     """Two-layer PII guard: VN regex + Presidio NER."""
 
     def __init__(self):
+        self._presidio_ok = False
+        if os.getenv("ENABLE_PRESIDIO", "0") != "1":
+            return
         try:
             from presidio_analyzer import AnalyzerEngine
             self._presidio = AnalyzerEngine()
@@ -97,7 +100,10 @@ class InputGuard:
         # Broad entities such as PERSON/DATE/NRP create many false positives in
         # Vietnamese legal text ("Nghị định 13", "Điều 9"), so they are excluded.
         if self._presidio_ok:
-            results = self._presidio.analyze(text=text, entities=PRESIDIO_ENTITIES, language="en")
+            try:
+                results = self._presidio.analyze(text=text, entities=PRESIDIO_ENTITIES, language="en")
+            except Exception:
+                results = []
             for r in sorted(results, key=lambda x: x.start, reverse=True):
                 entity = r.entity_type
                 if entity not in PRESIDIO_ENTITIES:

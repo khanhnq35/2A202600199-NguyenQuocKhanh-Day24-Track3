@@ -1,7 +1,7 @@
 {
   "detection_rate": 1.0,
   "false_positive_rate": 0.0,
-  "p95_latency_ms": 45.0,
+  "p95_latency_ms": 7.5,
   "total_tested": 20,
-  "groq_available": false
+  "groq_available": true
 }

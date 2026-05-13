@@ -39,6 +39,12 @@ SAFE_OUTPUTS = [
     "Cơ quan bảo vệ dữ liệu cá nhân có thể xử phạt vi phạm lên đến 5% doanh thu hàng năm.",
 ]
 
+UNSAFE_KEYWORDS = [
+    "sql injection", "malware", "ransomware", "phishing", "credential stuffing",
+    "dark web", "cccd giả", "ddos", "social engineering", "gian lận",
+    "xâm nhập", "đánh cắp", "bypass", "hack", "exfiltrate",
+]
+
 
 class OutputGuardAPI:
     """Llama Guard 3 via Groq API."""
@@ -53,13 +59,26 @@ class OutputGuardAPI:
         """Returns {safe, reason, latency_ms}."""
         t0 = time.perf_counter()
 
-        if not self._available:
+        def local_fallback(reason: str) -> dict:
+            lowered = (text or "").lower()
+            unsafe_hits = [kw for kw in UNSAFE_KEYWORDS if kw in lowered]
+            latency_ms = (time.perf_counter() - t0) * 1000
+            if unsafe_hits:
+                return {
+                    "safe": False,
+                    "reason": f"unsafe(local_fallback): {', '.join(unsafe_hits[:3])}",
+                    "latency_ms": round(latency_ms, 2),
+                    "model": f"{self.model}+local_fallback",
+                }
             return {
                 "safe": True,
-                "reason": "GROQ_API_KEY not set — Llama Guard skipped",
-                "latency_ms": 0.0,
-                "model": "skipped",
+                "reason": f"safe ({reason})",
+                "latency_ms": round(latency_ms, 2),
+                "model": f"{self.model}+local_fallback",
             }
+
+        if not self._available:
+            return local_fallback("GROQ_API_KEY not set")
 
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -84,13 +103,7 @@ class OutputGuardAPI:
                 "model": self.model,
             }
         except Exception as e:
-            latency_ms = (time.perf_counter() - t0) * 1000
-            return {
-                "safe": True,
-                "reason": f"error: {e}",
-                "latency_ms": round(latency_ms, 2),
-                "model": self.model,
-            }
+            return local_fallback(f"groq_error: {e}")
 
 
 def run_output_guard_tests() -> list:

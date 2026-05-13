@@ -274,9 +274,9 @@ def analyze_bias(pairwise_csv: str = "phase-b/pairwise_results.csv") -> None:
     axes[1].legend()
 
     plt.tight_layout()
-    plt.savefig("phase-b/bias_analysis.png", dpi=150, bbox_inches="tight")
+    plt.savefig("phase-b/bias_analysis.svg", bbox_inches="tight")
     plt.close()
-    print("Saved: phase-b/bias_analysis.png")
+    print("Saved: phase-b/bias_analysis.svg")
 
     # --- Report ---
     report_lines = [
@@ -299,7 +299,7 @@ def analyze_bias(pairwise_csv: str = "phase-b/pairwise_results.csv") -> None:
         "- Monitor `conciseness` dimension from absolute scoring as independent signal",
         "",
         "## 3. Chart\n",
-        "![Bias Analysis](bias_analysis.png)\n",
+        "![Bias Analysis](bias_analysis.svg)\n",
         "## 4. Summary\n",
         "| Bias Type | Magnitude | Mitigated? |",
         "|---|---|---|",

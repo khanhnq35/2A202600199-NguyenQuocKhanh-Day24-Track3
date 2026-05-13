@@ -99,8 +99,11 @@ def run_full_pipeline(query: str, use_rag: bool = True) -> dict:
         except Exception as e:
             answer = f"[RAG error: {e}]"
     else:
-        # Lightweight stub for pure-latency benchmarking
-        answer = call_llm("Trả lời ngắn gọn.", sanitized)
+        # Lightweight deterministic stub for guard-only latency benchmarking.
+        answer = (
+            "Câu hỏi thuộc phạm vi Nghị định 13 hoặc thuế GTGT. "
+            "Chạy với --use-rag để lấy câu trả lời đầy đủ từ pipeline RAG."
+        )
     layer_times["l2_ms"] = (time.perf_counter() - t_l2) * 1000
 
     # ── L3: Output guard ──

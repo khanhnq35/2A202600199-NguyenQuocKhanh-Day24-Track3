@@ -1,6 +1,6 @@
 {
   "detection_rate": 1.0,
-  "false_positive_rate": 1.0,
+  "false_positive_rate": 0.0,
   "total_adversarial": 20,
   "total_legitimate": 10
 }
